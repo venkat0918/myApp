@@ -1,0 +1,29 @@
+<div fxLayout="row" fxLayoutAlign="space-between center" class="header">
+  <img class="image" src="../../../assets/logo3.png">
+  <div fxLayout="column" fxHide.gt-xs class="searchiconunion"><i class="fas fa-search iconunion"></i><span class="names">Search</span></div>
+  <div fxHide.xs fxLayout="row" fxLayoutGap="15px">
+    <div fxLayout="column"><i class="fas fa-search iconunion"></i><span class="names">Search</span></div>
+    <div fxLayout="column"><i class="fas fa-th-list iconunion"></i><span class="names">MyWork</span></div>
+    <div fxLayout="column"><i class="far fa-bell iconunion"></i><span class="names">Alerts</span></div>
+    <div fxLayout="column"><i class="far fa-comment-alt iconunion"></i><span class="names">Feedback</span></div>
+    <div fxLayout="column"><i class="fas fa-sign-in-alt iconunion"></i><span class="names">Login</span></div>
+    <!-- <i class="fas fa-sign-out-alt iconunion"></i> -->
+  </div>
+</div>
+<div class="example-card">
+  <!-- <mat-card > -->
+  <router-outlet></router-outlet>
+  <!-- </mat-card> -->
+</div>
+<div fxHide.gt-xs class="footer" fxLayoutAlign="space-around">
+  <div fxLayout="column"><i class="fas fa-th-list mobileFooter"></i><span>MyWork</span></div>
+  <div fxLayout="column"><i class="far fa-bell mobileFooter"></i> <span>Alerts</span></div>
+  <div fxLayout="column"> <i class="far fa-comment-alt mobileFooter"></i> <span>Feedback</span></div>
+  <div fxLayout="column"><i class="fas fa-sign-in-alt mobileFooter"></i> <span>Login</span></div>
+  <!-- <i class="fas fa-sign-out-alt mobileFooter"></i> -->
+</div>
+
+
+<div fxHide.xs class="webFooter" fxLayoutAlign="space-around">
+<span class="copy" >UI: V 0.1.0 | 2018 Miracle Software Systems @ Private LTD</span>
+</div>

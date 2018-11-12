@@ -1,0 +1,70 @@
+.header{
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.image{
+    height: 72px;
+    width: 147px;
+    margin-top: 10px;
+}
+.iconunion{
+color:white;
+font-size: 24px;
+cursor: pointer;
+padding: 10px;
+:hover{
+    color: orange;
+}
+}
+.searchiconunion{
+padding: 10px; 
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+ }
+
+ .mobileFooter{
+    color: white;
+    font-size: 33px;
+    cursor: pointer;
+    padding: 18px;
+ }
+
+ .names{
+     color:white;
+     
+ }
+
+ .example-card {
+     min-height: 800px;
+    background: #ffffff;
+    box-shadow: 1px 1px 1px 1px lightgray;
+  }
+
+  .webFooter{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #EEEEEE;
+    border-top: 1px solid darkgray;
+    color: white;
+    text-align: center;
+    padding: 10px;
+  }
+.copy{
+    color:gray;
+}
+  /deep/ .mat-card:not{
+    box-shadow: unset !important;
+}

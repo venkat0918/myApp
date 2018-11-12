@@ -1,7 +1,7 @@
 .header{
     overflow: hidden;
     background-color: #333;
-    position: fixed;
+    // position: fixed;
     top: 0;
     width: 100%;
 }
@@ -46,7 +46,8 @@ padding: 10px;
  }
 
  .example-card {
-     min-height: 800px;
+     height: 800px;
+     overflow: scroll;
     background: #ffffff;
     box-shadow: 1px 1px 1px 1px lightgray;
   }
@@ -67,4 +68,15 @@ padding: 10px;
 }
   /deep/ .mat-card:not{
     box-shadow: unset !important;
+}
+
+.preheader{
+    color: white;
+    background: black;
+}
+.signup{
+    padding: 6px 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
 }

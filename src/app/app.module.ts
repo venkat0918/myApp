@@ -7,12 +7,19 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ProfileComponent } from './components/profile/profile.component';
 import{MatCardModule} from '@angular/material'
 import { AppRoutingModule } from './routes/app.routing';
-import{RouterModule} from '@angular/router'
+import{RouterModule} from '@angular/router';
+import { SignupComponent } from './components/signup/signup.component';
+import { MyWorkComponent } from './components/my-work/my-work.component'
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import {MatExpansionModule, MatFormFieldModule, MatInputModule} from '@angular/material';
+import{BrowserAnimationsModule} from '@angular/platform-browser/animations'
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ProfileComponent,
+    SignupComponent,
+    MyWorkComponent,
     //
   ],
   imports: [
@@ -20,7 +27,11 @@ import{RouterModule} from '@angular/router'
     FlexLayoutModule,
     MatCardModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DragDropModule,
+    MatExpansionModule,
+    MatFormFieldModule, MatInputModule,
+    BrowserAnimationsModule
     
   ],
   providers: [],

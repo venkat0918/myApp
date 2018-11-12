@@ -1,22 +1,33 @@
-<div fxLayout="row" fxLayoutAlign="space-between center" class="header">
-  <img class="image" src="../../../assets/logo3.png">
-  <div fxLayout="column" fxHide.gt-xs class="searchiconunion"><i class="fas fa-search iconunion"></i><span class="names">Search</span></div>
-  <div fxHide.xs fxLayout="row" fxLayoutGap="15px">
-    <div fxLayout="column"><i class="fas fa-search iconunion"></i><span class="names">Search</span></div>
-    <div fxLayout="column"><i class="fas fa-th-list iconunion"></i><span class="names">MyWork</span></div>
-    <div fxLayout="column"><i class="far fa-bell iconunion"></i><span class="names">Alerts</span></div>
-    <div fxLayout="column"><i class="far fa-comment-alt iconunion"></i><span class="names">Feedback</span></div>
-    <div fxLayout="column"><i class="fas fa-sign-in-alt iconunion"></i><span class="names">Login</span></div>
-    <!-- <i class="fas fa-sign-out-alt iconunion"></i> -->
+<div fxLayout="column" class="header">
+  <div *ngIf="isLogin" class="preheader" fxLayout="row" fxLayoutAlign="space-between center">
+    <div style="padding: 6px 10px;"><span>Welcome to UserPortal <span style="color: #f96302"><a>Venkat</a></span></span></div>
+    <div style="padding-right: 10px"><span>Whats New?</span></div>
+  </div>
+  <div *ngIf="!isLogin" class="preheader" fxLayout="row">
+    <div class="signup" routerLink="/home/signup"><span>Create Account</span></div>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <img class="image" src="../../../assets/logo3.png">
+    <div fxLayout="column" fxHide.gt-xs class="searchiconunion"><i class="fas fa-search iconunion"></i><span class="names">Search</span></div>
+    <div fxHide.xs fxLayout="row" fxLayoutGap="15px">
+      <div fxLayout="column"><i class="fas fa-search iconunion"></i><span class="names">Search</span></div>
+      <div fxLayout="column" routerLink="/home/mywork"><i class="fas fa-th-list iconunion"></i><span class="names">MyWork</span></div>
+      <div fxLayout="column"><i class="far fa-bell iconunion"></i><span class="names">Alerts</span></div>
+      <div fxLayout="column"><i class="far fa-comment-alt iconunion"></i><span class="names">Feedback</span></div>
+      <div *ngIf="!isLogin" fxLayout="column"><i class="fas fa-sign-in-alt iconunion"></i><span class="names">Login</span></div>
+      <div *ngIf="isLogin" fxLayout="column"><i class="fas fa-sign-out-alt iconunion"></i><span class="names">Logout</span></div>
+      
+    </div>
   </div>
 </div>
+
 <div class="example-card">
-  <!-- <mat-card > -->
   <router-outlet></router-outlet>
-  <!-- </mat-card> -->
 </div>
+
 <div fxHide.gt-xs class="footer" fxLayoutAlign="space-around">
-  <div fxLayout="column"><i class="fas fa-th-list mobileFooter"></i><span>MyWork</span></div>
+  <div fxLayout="column" routerLink="/home/mywork"><i class="fas fa-th-list mobileFooter"></i><span>MyWork</span></div>
   <div fxLayout="column"><i class="far fa-bell mobileFooter"></i> <span>Alerts</span></div>
   <div fxLayout="column"> <i class="far fa-comment-alt mobileFooter"></i> <span>Feedback</span></div>
   <div fxLayout="column"><i class="fas fa-sign-in-alt mobileFooter"></i> <span>Login</span></div>
@@ -25,5 +36,5 @@
 
 
 <div fxHide.xs class="webFooter" fxLayoutAlign="space-around">
-<span class="copy" >UI: V 0.1.0 | 2018 Miracle Software Systems @ Private LTD</span>
+  <span class="copy">UI: V 0.1.0 | 2018 Miracle Software Systems @ Private LTD</span>
 </div>

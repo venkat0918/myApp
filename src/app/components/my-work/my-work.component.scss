@@ -1,0 +1,23 @@
+
+  .card{
+    margin-top: 13px;
+    border-top: 1px solid lightgray;
+    /* min-height: 540px; */
+  }
+  .add{
+    background: #f96302;;
+    color: white;
+    padding: 10px;
+    border-radius: 100%;
+
+  }
+
+  .list{
+    cursor: pointer;
+    :hover{
+        background: red;
+    }
+}
+.sidedata{
+    margin:5px;
+}

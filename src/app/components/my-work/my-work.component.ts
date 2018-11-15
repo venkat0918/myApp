@@ -4,7 +4,7 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 @Component({
   selector: 'app-my-work',
   templateUrl: './my-work.component.html',
-  styleUrls: ['./my-work.component.css']
+  styleUrls: ['./my-work.component.scss']
 })
 export class MyWorkComponent implements OnInit {
   todo = [

@@ -66,7 +66,7 @@ padding: 10px;
 .copy{
     color:gray;
 }
-  /deep/ .mat-card:not{
+ .mat-card:not{
     box-shadow: unset !important;
 }
 

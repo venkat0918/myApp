@@ -15,17 +15,8 @@
   </div>
 
   <div style="margin-top:15px" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="10px">
-    <mat-card style="cursor: pointer">
-      <span>
-        <i style="color: blue;" class="fab fa-google"></i>
-        <span style="padding-left: 9px;">Google</span>
-      </span>
-    </mat-card>
-    <mat-card style="cursor: pointer">
-      <span>
-        <i style="color: blue;" class="fab fa-facebook-f"></i>
-        <span style="padding-left: 9px;">Facebook</span>
-      </span>
-    </mat-card>
+    <button (click)="loginWithGoogle()" class="loginBtn loginBtn--google">
+      Login with Google
+    </button>
   </div>
 </div>

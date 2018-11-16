@@ -25,3 +25,37 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+smsession 
+=============
+
+SMSESSION is a system cookie used by Siteminder. You shouldn't/mustn't mess with it.
+
+If your application is Siteminder-enabled, Siteminder will take care of the authentication process of the users.
+Once the user is authenticated by Siteminder, the Siteminder agent on your application will add specific HTTP headers (notably SM_USER) that will contain information about the user.
+You just have to fetch those informations from the request.
+
+
+2.forkjoin
+3.flatmap
+4.SSO
+5.array.push.apply
+6.gettes and setters in js
+7.locations
+maps and rootes
+
+lifecycle hooks and appinitializer
+
+
+
+https://www.npmjs.com/package/currency-formatter
+
+important 
+============
+1. use firebase databse 
+2. crud operation in FDB
+3. image upload in FDB and retrive uploaded image 
+4. push notification with Firebase
+5. Crop image in angular 6
+6. idel logout 10 mins

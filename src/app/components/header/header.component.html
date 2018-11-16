@@ -1,6 +1,7 @@
 <div fxLayout="column" class="header">
   <div *ngIf="isLogin" class="preheader" fxLayout="row" fxLayoutAlign="space-between center">
-    <div style="padding: 6px 10px;"><span>Welcome to UserPortal <span style="color: #f96302"><a>Venkat</a></span><i style="margin-left: 10px;" class="fas fa-user-edit"></i></span></div>
+    <div style="padding: 6px 10px;"><span>Welcome to UserPortal <span style="color: #f96302"><a>Venkat</a></span><i
+          style="margin-left: 10px;" class="fas fa-user-edit"></i></span></div>
     <div style="padding-right: 10px"><span>Whats New?</span></div>
   </div>
   <div *ngIf="!isLogin" class="preheader" fxLayout="row">
@@ -12,12 +13,30 @@
     <div fxLayout="column" fxHide.gt-xs class="searchiconunion"><i class="fas fa-search iconunion"></i><span class="names">Search</span></div>
     <div fxHide.xs fxLayout="row" fxLayoutGap="15px">
       <div id="search" fxLayout="column"><i class="fas fa-search iconunion"></i><span class="names">Search</span></div>
+      <div #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="menu" id="search" fxLayout="column">
+        <i (mouseenter)="menuTrigger.openMenu()" class="fas fa-cog iconunion"></i>
+        <span class="names">Services</span>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <span>Convertor</span>
+          </button>
+          <button mat-menu-item>
+            <span>Check voicemail</span>
+          </button>
+          <button mat-menu-item>
+            <span>Disable alerts</span>
+          </button>
+        </mat-menu>
+      </div>
+
+
+
       <div id="mywork" fxLayout="column" routerLink="/home/mywork"><i class="fas fa-th-list iconunion"></i><span class="names">MyWork</span></div>
       <div id="alerts" fxLayout="column"><i class="far fa-bell iconunion"></i><span class="names">Alerts</span></div>
       <div id="feedback" fxLayout="column"><i class="far fa-comment-alt iconunion"></i><span class="names">Feedback</span></div>
-      <div id="login" *ngIf="!isLogin" routerLink="/home/login" fxLayout="column"><i class="fas fa-sign-in-alt iconunion"></i><span class="names">Login</span></div>
+      <div id="login" *ngIf="!isLogin" routerLink="/home/login" fxLayout="column"><i class="fas fa-sign-in-alt iconunion"></i><span
+          class="names">Login</span></div>
       <div id="logout" *ngIf="isLogin" fxLayout="column"><i class="fas fa-sign-out-alt iconunion"></i><span class="names">Logout</span></div>
-      
     </div>
   </div>
 </div>
@@ -26,19 +45,19 @@
   <router-outlet></router-outlet>
 </div>
 
-<div *ngIf="!footer" fxHide.gt-xs class="footer" fxLayoutAlign="center" fxLayout="column" >
-    <div (click)="hidefooter()"> <span>=</span></div>
-  </div>
+<div *ngIf="!footer" fxHide.gt-xs class="footer" fxLayoutAlign="center" fxLayout="column">
+  <div (click)="hidefooter()"> <span>=</span></div>
+</div>
 
-<div  *ngIf="footer" fxHide.gt-xs class="footer" fxLayoutAlign="center" fxLayout="column" >
+<div *ngIf="footer" fxHide.gt-xs class="footer" fxLayoutAlign="center" fxLayout="column">
   <div (click)="hidefooter()"> <span>=</span></div>
   <div fxLayoutAlign="space-around" fxLayout="row">
-  <div fxLayout="column" routerLink="/home/mywork"><i class="fas fa-th-list mobileFooter"></i><span>MyWork</span></div>
-  <div fxLayout="column"><i class="far fa-bell mobileFooter"></i> <span>Alerts</span></div>
-  <div fxLayout="column"> <i class="far fa-comment-alt mobileFooter"></i> <span>Feedback</span></div>
-  <div fxLayout="column"><i class="fas fa-sign-in-alt mobileFooter"></i> <span>Login</span></div>
-  <!-- <i class="fas fa-sign-out-alt mobileFooter"></i> -->
-</div>
+    <div fxLayout="column" routerLink="/home/mywork"><i class="fas fa-th-list mobileFooter"></i><span>MyWork</span></div>
+    <div fxLayout="column"><i class="far fa-bell mobileFooter"></i> <span>Alerts</span></div>
+    <div fxLayout="column"> <i class="far fa-comment-alt mobileFooter"></i> <span>Feedback</span></div>
+    <div fxLayout="column"><i class="fas fa-sign-in-alt mobileFooter"></i> <span>Login</span></div>
+    <!-- <i class="fas fa-sign-out-alt mobileFooter"></i> -->
+  </div>
 </div>
 
 

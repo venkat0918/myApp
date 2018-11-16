@@ -80,3 +80,7 @@ padding: 10px;
     outline: none;
     cursor: pointer;
 }
+
+/deep/ .mat-menu-panel{
+    margin: 60px -129px !important;
+}

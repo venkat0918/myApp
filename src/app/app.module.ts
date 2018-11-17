@@ -11,7 +11,8 @@ import{RouterModule} from '@angular/router';
 import { SignupComponent } from './components/signup/signup.component';
 import { MyWorkComponent } from './components/my-work/my-work.component'
 import {DragDropModule} from '@angular/cdk/drag-drop';
-import {MatExpansionModule,MatListModule,MatIconModule, MatMenuModule,MatFormFieldModule, MatInputModule,MatToolbarModule} from '@angular/material';
+import {MatExpansionModule,MatListModule,MatIconModule,
+  MatButtonModule, MatMenuModule,MatFormFieldModule, MatInputModule,MatToolbarModule} from '@angular/material';
 import{BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/login/login.component';
 import { EditUserDetailsComponent } from './components/edit-user-details/edit-user-details.component';
@@ -19,6 +20,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import{AngularFireModule} from 'angularfire2'
 import{AngularFireAuthModule} from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { NotesComponent } from './components/notes/notes.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +31,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     LoginComponent,
     EditUserDetailsComponent,
     DashboardComponent,
+    NotesComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     AngularFireDatabaseModule,
     MatListModule,
     MatMenuModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule
     
   ],
   providers: [],

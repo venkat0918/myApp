@@ -27,6 +27,15 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 
+
+1. bugs faces and solution to bug;
+2. create and edit work for user and the user can see and help to other people ny tacking their     tasks.
+3. if admin assign new task and the user imadiatly get the mail to user.
+4. user can chat to anothe user for help.
+5. sign in with google or fb.
+6. sign up send otp for mobile number verification.
+
+
 smsession 
 =============
 

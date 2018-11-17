@@ -1,24 +1,26 @@
-<!-- <div style="margin-top:20px" fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px" fxFlex="100">
-  <div fxFlex="20">
-    <mat-list>
-      <mat-list-item>Item 1</mat-list-item>
-      <mat-divider></mat-divider>
-      <mat-list-item>Item 2</mat-list-item>
-      <mat-divider></mat-divider>
-      <mat-list-item>Item 3</mat-list-item>
-    </mat-list>
-  </div>
-  <mat-card class="sidedata" fxFlex="grow">Simple card</mat-card>
-  <mat-card class="sidedata" fxFlex="grow">Simple card</mat-card>
-  <mat-card class="sidedata" fxFlex="grow">Simple card</mat-card>
-</div> -->
-
-<div class="dashboard" fxLayout="row">
+<div class="dashboard" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between">
   <div fxLayout="column">
     <h1>Welcome to User Portal</h1>
-    <span>Hello hi this is my website</span>
+    <span>Here we are providing some set of services</span>
   </div>
   <div>
-
+    <div routerLink="/home/notes" class="sidedata">
+      <mat-card style="background: #ffff99">View Notes</mat-card>
+    </div>
+    <div class="sidedata" >
+      <mat-card style="background: #a3c2c2">Converter</mat-card>
+    </div>
+    <div class="sidedata" >
+      <mat-card style="background: #33adff">Users Details</mat-card>
+    </div>
+    <div class="sidedata" >
+      <mat-card style="background: #80ffbf">Chat</mat-card>
+    </div>
+    <div class="sidedata" >
+      <mat-card style="background: #99e6ff">Post Information</mat-card>
+    </div>
+    <div class="sidedata" >
+      <mat-card style="background: #66ffff">Store Files</mat-card>
+    </div>
   </div>
 </div>

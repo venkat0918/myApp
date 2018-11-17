@@ -6,9 +6,19 @@
 }
 .sidedata{
     margin:5px;
+    cursor: pointer;
+    :hover{
+        box-shadow: 5px 2px 5px lightgray;
+    }  
 }
 
 .dashboard{
-    background-image: url("../../../assets/bg.png");
+    // background-image: url("../../../assets/bg.png");
     padding: 25px;
+    background: url("../../../assets/backG.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
 }

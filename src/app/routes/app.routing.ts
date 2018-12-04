@@ -17,7 +17,7 @@ const routes: Routes = [
     {
         path: 'home', component: HeaderComponent,
         children: [
-            // { path: '', redirectTo: 'dashboard',pathMatch:'full', component: DashboardComponent },
+            { path: '', redirectTo: 'dashboard',pathMatch:'full'},
             { path: 'profile', component: ProfileComponent },
             { path: 'signup', component: SignupComponent },
             { path: 'mywork', component: MyWorkComponent },

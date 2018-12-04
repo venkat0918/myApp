@@ -1,10 +1,10 @@
 <div fxLayout="column" class="header">
-  <div *ngIf="isLogin" class="preheader" fxLayout="row" fxLayoutAlign="space-between center">
-    <div style="padding: 6px 10px;outline: none;"><span>Welcome to UserPortal <span style="color: #f96302"><a>Venkat</a></span><i
+  <div *ngIf="isLoggedIn" class="preheader" fxLayout="row" fxLayoutAlign="space-between center">
+    <div style="padding: 6px 10px;outline: none;"><span>Welcome to UserPortal <span style="color: #f96302"><a>{{userDetails.displayName}}</a></span><i
           style="margin-left: 10px;outline: none;" class="fas fa-user-edit"></i></span></div>
     <div style="padding-right: 10px;outline: none;"><span>Whats New?</span></div>
   </div>
-  <div *ngIf="!isLogin" class="preheader" fxLayout="row">
+  <div *ngIf="!isLoggedIn" class="preheader" fxLayout="row">
     <div id="signup" class="signup" routerLink="/home/signup" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}"><span>Create Account</span></div>
   </div>
 

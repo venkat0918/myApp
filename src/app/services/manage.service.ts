@@ -6,7 +6,6 @@ import { Injectable } from '@angular/core';
 export class ManageService {
 
   constructor() {
-    console.log('jjkhv fdsdfd sdbfhdgfhdb')
    }
 }
   

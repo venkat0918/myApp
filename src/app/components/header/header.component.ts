@@ -1,13 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition,
-  // ...
-} from '@angular/animations';
-import { myModel } from '../../../assets/model'
+import { AuthServiceService } from 'src/app/services/auth-service.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -16,15 +10,22 @@ import { myModel } from '../../../assets/model'
 export class HeaderComponent implements OnInit {
   isLogin: boolean = false;
   footer: boolean = true;
-  constructor() {
-    let employee = new myModel();
-    employee.data = "Bob Smith";
-    if (employee.data) {
-      console.log(employee.data);
-    }
+  isLoggedIn: boolean = false;
+  userDetails: any;
+
+  constructor(public authService: AuthServiceService, public router: Router) {
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.authService.loggedData.subscribe(res => {
+      if (res['emailVerified']) {
+        this.userDetails = res.metadata;
+        this.isLoggedIn = res['emailVerified'];
+        this.router.navigateByUrl('/home/dashboard')
+      }
+    })
+  }
+
   hidefooter() {
     this.footer = !this.footer;
   }

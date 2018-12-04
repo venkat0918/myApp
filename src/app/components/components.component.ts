@@ -26,7 +26,8 @@ export class ComponentsComponent implements OnInit {
     { prop: 'gender', name: 'Gender' },
     { prop: 'company', name: 'Company' }
   ];
-  constructor(public userService: UserdataService, public ser : ManageService) {
+  
+  constructor(public userService: UserdataService, public ser: ManageService) {
 
 
   }
@@ -67,6 +68,5 @@ export class ComponentsComponent implements OnInit {
       })
     }
   }
-
 
 }

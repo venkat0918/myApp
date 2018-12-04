@@ -1,3 +1,4 @@
+<div fxLayout="column">
 <div class="box">
   <h2>SignUp</h2>
   <div>
@@ -21,26 +22,9 @@
   </div>
 </div>
 
-
-<!-- <div *ngIf="isVerified" class="box">
-    <h2>Sign Up</h2>
-    <div>
-      <div class="inputBox">
-        <input type="text" name="" required="">
-        <label>Mobile</label>
-      </div>
-      <div class="inputBox">
-        <input type="text" name="" required="">
-        <label>Last Name</label>
-      </div>
-      <div class="inputBox">
-        <input type="text" name="" required="">
-        <label>Email</label>
-      </div>
-      <div class="inputBox">
-        <input type="password" name="" required="">
-        <label>Password</label>
-      </div>
-      <button value="Submit" >Submit</button>
-    </div>
-  </div> -->
+<div style="margin-top:15px" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="10px">
+    <button (click)="loginWithGoogle()" class="loginBtn loginBtn--google">
+      Login with Google
+    </button>
+  </div>
+  </div>

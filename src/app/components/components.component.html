@@ -14,11 +14,11 @@
     Uesr Data
   </h3>
   <!-- Data table Start -->
-  <ngx-datatable class="material" fixed-header [rows]="rows" [sortType]="'multi'" [columnMode]="'force'" [headerHeight]="50"
+  <ngx-datatable class="material" [rows]="rows" [sortType]="'multi'" [columnMode]="'force'" [headerHeight]="50"
     [footerHeight]="50" [rowHeight]="50" [limit]="8" [rowHeight]="'auto'" [selected]="selected" [selectionType]="'checkbox'"
     (activate)="onActivate($event)" (select)='onSelect($event)'>
-  
-  
+
+
     <!-- <ngx-datatable-column>
         <ng-template>
           <input type="text">
@@ -36,12 +36,38 @@
       </ng-template>
     </ngx-datatable-column>
 
+    <!-- <ngx-datatable-column [width]="30" [sortable]="false" [canAutoResize]="false" [draggable]="false" [resizeable]="false"
+      [headerCheckboxable]="true" [checkboxable]="true">
+      <ng-template ngx-datatable-header-template let-value="value" let-allRowsSelected="allRowsSelected" let-selectFn="selectFn">
+          <i class="fas fa-edit" style="cursor: pointer" [matMenuTriggerFor]="menu1"></i>
+        </ng-template>
+    </ngx-datatable-column> -->
+
     <!-- dynamic columns -->
     <ngx-datatable-column *ngFor="let col of columns" [prop]="col.prop">
       <ng-template let-value="value" ngx-datatable-cell-template>
         <strong class="large">{{value}}</strong>
       </ng-template>
     </ngx-datatable-column>
+
+
+    <!-- <ngx-datatable-footer>
+    <ng-template ngx-datatable-footer-template let-rowCount="rowCount" let-pageSize="pageSize" let-selectedCount="selectedCount"
+      let-curPage="curPage" let-offset="offset">
+      <div style="padding: 5px 10px">
+        <div>
+          <strong>Summary</strong>: Gender: Female
+        </div>
+        <hr style="width:100%" />
+        <div>
+          Rows: {{rowCount}} |
+          Size: {{pageSize}} |
+          Current: {{curPage}} |
+          Offset: {{offset}}
+        </div>
+      </div>
+    </ng-template>
+    </ngx-datatable-footer> -->
 
   </ngx-datatable>
 

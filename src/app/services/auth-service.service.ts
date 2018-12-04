@@ -1,55 +1,50 @@
 import { Injectable } from '@angular/core';
-import { of as ObservableOf, Observable } from 'rxjs';
+import { of as ObservableOf, Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { auth } from 'firebase'
 import * as firebase from 'firebase/app';
 import { AngularFireAuth } from 'angularfire2/auth';
 
-import { AngularFireDatabase, AngularFireList} from 'angularfire2/database';
-class Book {
-  constructor(public title) { }
-}
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthServiceService {
-  public books: AngularFireList<Book[]>;
   private user: Observable<firebase.User>;
   private userDetails: firebase.User = null;
-  uid = this.aAuth.authState.pipe(map(authState => {
-    if (!authState) {
-      return null;
-    } else {
-      return authState.uid;
-    }
-  }));
+  public loggedData: Subject<any>;
+
+
   constructor(public aAuth: AngularFireAuth, db: AngularFireDatabase) {
-    console.log('--dd---', )
-    this.books = db.list('/messages');
-    console.log('--dd--/-',db )
-    // this.books.push({'a': 10});
-    const newBook = new Book('man');
-    this.books.push([newBook]);
+    this.loggedData = new Subject();
     this.user = aAuth.authState;
-    this.user.subscribe(
-      (user) => {
-        if (user) {
-          this.userDetails = user;
-          console.log(this.userDetails);
-        }
-        else {
-          this.userDetails = null;
-        }
+    this.user.subscribe((user) => {
+      if (user) {
+        this.userDetails = user;
+        console.log(this.userDetails);
       }
-    );
+      else {
+        this.userDetails = null;
+      }
+    });
   }
 
   login() {
-    console.log(this.userDetails);
-    this.aAuth.auth.signInWithPopup(new auth.GoogleAuthProvider()).then(res => {
-      console.log('google ----', res)
+    return new Promise((res, rej) => {
+      if (this.userDetails) {
+        const user = { 'emailVerified': this.userDetails['emailVerified'], 'metadata': this.userDetails['providerData'][0] }
+        res(user)
+      } else {
+        this.aAuth.auth.signInWithPopup(new auth.GoogleAuthProvider()).then(response => {
+          const user = { 'emailVerified': res['emailVerified'], 'metadata': res['providerData'][0] }
+          localStorage.setItem('isLogin', res['emailVerified'])
+          res(user)
+        })
+      }
     })
   }
+
   logOut() {
     this.aAuth.auth.signOut();
   }

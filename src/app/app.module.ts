@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import{FormsModule,ReactiveFormsModule} from '@angular/forms'
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -12,7 +12,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { MyWorkComponent } from './components/my-work/my-work.component'
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {MatExpansionModule,MatListModule,MatIconModule,
-  MatButtonModule, MatMenuModule,MatFormFieldModule, MatInputModule,MatToolbarModule} from '@angular/material';
+  MatButtonModule, MatMenuModule,MatFormFieldModule, MatInputModule,MatToolbarModule, MatCheckboxModule} from '@angular/material';
 import{BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/login/login.component';
 import { EditUserDetailsComponent } from './components/edit-user-details/edit-user-details.component';
@@ -21,6 +21,13 @@ import{AngularFireModule} from 'angularfire2'
 import{AngularFireAuthModule} from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { NotesComponent } from './components/notes/notes.component';
+import { ComponentsComponent } from './components/components.component';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import{HttpClientModule} from '@angular/common/http'
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +39,7 @@ import { NotesComponent } from './components/notes/notes.component';
     EditUserDetailsComponent,
     DashboardComponent,
     NotesComponent,
+    ComponentsComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,8 +65,11 @@ import { NotesComponent } from './components/notes/notes.component';
     MatListModule,
     MatMenuModule,
     MatIconModule,
-    MatButtonModule
-    
+    MatButtonModule,
+    NgxDatatableModule,
+    MatCheckboxModule,
+    FormsModule,ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

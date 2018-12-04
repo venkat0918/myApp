@@ -1,0 +1,48 @@
+<div fxLayoutAlign="center">
+  <mat-menu #menu1="matMenu">
+    <div fxLayout="column" *ngFor="let col of columnName">
+      <mat-checkbox (ngModelChange)="select(col.name, col.value)" [(ngModel)]="col.value" [disabled]="(col.name === 'Name' || col.name === 'Gender' || col.name === 'Company')"
+        [value]="col.value">{{col.name}}</mat-checkbox>
+    </div>
+  </mat-menu>
+</div>
+
+
+
+<div style="padding: 8px 20px 189px 20px;">
+  <h3>
+    Uesr Data
+  </h3>
+  <!-- Data table Start -->
+  <ngx-datatable class="material" fixed-header [rows]="rows" [sortType]="'multi'" [columnMode]="'force'" [headerHeight]="50"
+    [footerHeight]="50" [rowHeight]="50" [limit]="8" [rowHeight]="'auto'" [selected]="selected" [selectionType]="'checkbox'"
+    (activate)="onActivate($event)" (select)='onSelect($event)'>
+  
+  
+    <!-- <ngx-datatable-column>
+        <ng-template>
+          <input type="text">
+        </ng-template>
+    </ngx-datatable-column> -->
+
+
+    <!-- header and col check boxs -->
+    <ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false" [draggable]="false" [resizeable]="false">
+      <ng-template ngx-datatable-header-template let-value="value" let-allRowsSelected="allRowsSelected" let-selectFn="selectFn">
+        <i class="fas fa-edit" style="cursor: pointer" [matMenuTriggerFor]="menu1"></i>
+      </ng-template>
+      <ng-template ngx-datatable-cell-template let-value="value" let-isSelected="isSelected" let-onCheckboxChangeFn="onCheckboxChangeFn">
+        <input type="checkbox" style="cursor: pointer" [checked]="isSelected" (change)="onCheckboxChangeFn($event)" />
+      </ng-template>
+    </ngx-datatable-column>
+
+    <!-- dynamic columns -->
+    <ngx-datatable-column *ngFor="let col of columns" [prop]="col.prop">
+      <ng-template let-value="value" ngx-datatable-cell-template>
+        <strong class="large">{{value}}</strong>
+      </ng-template>
+    </ngx-datatable-column>
+
+  </ngx-datatable>
+
+</div>

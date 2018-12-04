@@ -1,0 +1,25 @@
+/deep/ .ngx-datatable.fixed-row .datatable-scroll .datatable-body-row .datatable-body-cell{
+    border-right: 1px solid lightgray !important;
+}
+
+/deep/ .ngx-datatable .datatable-footer .datatable-pager .pager{
+    border: 1px solid lightgray !important;
+}
+/deep/ .ngx-datatable .datatable-footer .datatable-pager .pager li, {
+    border-right: 1px solid lightgray !important;
+}
+
+/deep/ .mat-checkbox{
+    padding: 5px !important;
+}
+
+/deep/ .mat-button,{
+    background: #FFFFFF !important;
+    border: 1px solid lightgray !important;
+    box-shadow: 2px 2px 2px lightgrey !important;
+
+}
+
+/deep/ .ngx-datatable.fixed-row .datatable-scroll .datatable-body-row .datatable-body-cell{
+    border-bottom: 1px solid lightgrey !important;
+}

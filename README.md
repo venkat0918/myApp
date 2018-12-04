@@ -39,7 +39,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 smsession 
 =============
 
-SMSESSION is a system cookie used by Siteminder. You shouldn't/mustn't mess with it.
+SM_SESSION is a system cookie used by Siteminder. You shouldn't/mustn't mess with it.
 
 If your application is Siteminder-enabled, Siteminder will take care of the authentication process of the users.
 Once the user is authenticated by Siteminder, the Siteminder agent on your application will add specific HTTP headers (notably SM_USER) that will contain information about the user.

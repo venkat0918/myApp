@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import '~@swimlane/ngx-datatable/release/index.css';
+@import '~@swimlane/ngx-datatable/release/themes/material.css';
+@import '~@swimlane/ngx-datatable/release/assets/icons.css';
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 body{
     margin: 0;
@@ -8,3 +10,12 @@ body{
     overflow: hidden;
 }
 
+.ngx-datatable.fixed-header .datatable-header-cell{
+    background: #f96302 !important;
+    font-size: 18px !important;
+    color: #ffffff !important;
+}
+
+.datatable-header-cell.sortable {
+
+}

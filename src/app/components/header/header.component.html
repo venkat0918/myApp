@@ -1,7 +1,7 @@
 <div fxLayout="column" class="header">
   <div *ngIf="isLoggedIn" class="preheader" fxLayout="row" fxLayoutAlign="space-between center">
-    <div style="padding: 6px 10px;outline: none;"><span>Welcome to UserPortal <span style="color: #f96302"><a>{{userDetails.displayName}}</a></span><i
-          style="margin-left: 10px;outline: none;" class="fas fa-user-edit"></i></span></div>
+    <div  style="padding: 6px 10px;outline: none;"><span>Welcome to UserPortal <span *ngIf="userDetails" style="color: #f96302"><a>{{userDetails.displayName}}</a></span><i
+          style="margin-left: 10px;outline: none;" (click)='open()' class="fas fa-user-edit"></i></span></div>
     <div style="padding-right: 10px;outline: none;"><span>Whats New?</span></div>
   </div>
   <div *ngIf="!isLoggedIn" class="preheader" fxLayout="row">
@@ -34,9 +34,9 @@
       <div id="mywork" fxLayout="column" style="outline:none" routerLink="/home/mywork"><i class="fas fa-th-list iconunion"></i><span class="names">MyWork</span></div>
       <div id="alerts" style="outline:none" fxLayout="column"><i class="far fa-bell iconunion"></i><span class="names">Alerts</span></div>
       <div id="feedback" style="outline:none" fxLayout="column"><i class="far fa-comment-alt iconunion"></i><span class="names">Feedback</span></div>
-      <div id="login" style="outline:none" *ngIf="!isLogin" routerLink="/home/login" fxLayout="column"><i class="fas fa-sign-in-alt iconunion"></i><span
+      <div id="login" style="outline:none" *ngIf="!isLoggedIn"  routerLink="/home/login" fxLayout="column"><i class="fas fa-sign-in-alt iconunion"></i><span
           class="names">Login</span></div>
-      <div id="logout" style="outline:none" *ngIf="isLogin" fxLayout="column"><i class="fas fa-sign-out-alt iconunion"></i><span class="names">Logout</span></div>
+      <div id="logout" style="outline:none" *ngIf="isLoggedIn" (click)="logout()" fxLayout="column"><i class="fas fa-sign-out-alt iconunion"></i><span class="names">Logout</span></div>
     </div>
   </div>
 </div>
@@ -55,8 +55,8 @@
     <div style="outline:none" fxLayout="column" routerLink="/home/mywork"><i class="fas fa-th-list mobileFooter"></i><span>MyWork</span></div>
     <div style="outline:none" fxLayout="column"><i class="far fa-bell mobileFooter"></i> <span>Alerts</span></div>
     <div style="outline:none" fxLayout="column"> <i class="far fa-comment-alt mobileFooter"></i> <span>Feedback</span></div>
-    <div style="outline:none" fxLayout="column"><i class="fas fa-sign-in-alt mobileFooter"></i> <span>Login</span></div>
-    <!-- <i class="fas fa-sign-out-alt mobileFooter"></i> -->
+    <div *ngIf="!isLoggedIn" style="outline:none" fxLayout="column"><i class="fas fa-sign-in-alt mobileFooter"></i> <span>Login</span></div>
+    <div *ngIf="isLoggedIn" style="outline:none" fxLayout="column"> <i class="fas fa-sign-out-alt mobileFooter"></i>  <span>Logout</span></div>
   </div>
 </div>
 

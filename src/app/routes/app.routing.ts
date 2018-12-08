@@ -8,14 +8,16 @@ import { SignupComponent } from '../components/signup/signup.component';
 import { MyWorkComponent } from '../components/my-work/my-work.component';
 import { LoginComponent } from '../components/login/login.component';
 import { ComponentsComponent } from '../components/components.component';
+import { FirebaseComponent } from '../components/firebase/firebase.component';
 
 console.log('app routing ',localStorage.getItem('data'))
 
 
 const routes: Routes = [
-    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
     {
-        path: 'home', component: HeaderComponent,
+        path: 'home',
+        component: HeaderComponent,
         children: [
             { path: '', redirectTo: 'dashboard',pathMatch:'full'},
             { path: 'profile', component: ProfileComponent },
@@ -27,6 +29,7 @@ const routes: Routes = [
             { path: 'datatable', component: ComponentsComponent }
         ]
     },
+    { path: 'firebase', component: FirebaseComponent }
 ]
 
 @NgModule({

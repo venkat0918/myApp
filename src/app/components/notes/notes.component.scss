@@ -1,0 +1,61 @@
+.textData{
+    border: 2px solid lightgray;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: 'Roboto,"Helvetica Neue",sans-serif';
+    outline: none;
+    font-size: 15px;
+}
+.notes{
+    max-width: 200px;
+    margin-top:5px;
+    background: #ffcc66;
+    padding: 11px;
+    font-family: 'Roboto,"Helvetica Neue",sans-serif'
+}
+
+.showhide{
+    margin-left: 50%;
+}
+.nonotes{
+    background: red;
+    padding: 20px;
+    font-size: 15px;
+    font-family: 'Roboto,"Helvetica Neue",sans-serif'
+}
+input[type="text"]{
+    padding: 7px;
+    font-size: 15px;
+    border: 1px solid lightgray;
+    border-radius: 7px;
+    outline: none;
+    font-family: 'Roboto,"Helvetica Neue",sans-serif'
+}
+
+.inptselect{
+    font-size: 15px;
+    padding: 7px;
+    border: 1px solid lightgray;
+    border-radius: 7px;
+    outline: none;
+    width: 170px;
+    font-family: 'Roboto,"Helvetica Neue",sans-serif'
+}
+
+
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}

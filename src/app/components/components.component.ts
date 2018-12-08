@@ -21,12 +21,13 @@ export class ComponentsComponent implements OnInit {
     { "name": 'EmpId', 'value': false }
   ];
   selected = [];
+
   columns = [
     { prop: 'name', name: 'Name' },
     { prop: 'gender', name: 'Gender' },
     { prop: 'company', name: 'Company' }
   ];
-  
+
   constructor(public userService: UserdataService, public ser: ManageService) {
 
 

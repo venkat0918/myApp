@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start:local": "ng serve --port 3002 -o",
     "build": "ng build",
     "test:protractor": "protractor typeScript/config/config.js",
     "lint": "ng lint",

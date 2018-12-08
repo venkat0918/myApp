@@ -1,16 +1,76 @@
-<mat-card style="height: 100%;">
+<mat-card fxLayout="column" fxLayoutGap="20px" style="height: 100%;">
 
-  <div  fxLayout="column">
-    <span>Test Data</span>
-    <span>Mate data</span>
+  <div *ngIf="false" class="nonotes" fxLayout="column">
+    <span>Sorry...! Currently No Notes are avilable</span>
   </div>
 
-  <div fxLayout="column" fxLayoutGap="15px">
-    <textarea class="textData" rows="10" cols="100">
-        </textarea>
+  <div *ngIf="true" fxLayoutGap="5px" fxLayout="row wrap">
+    <div class="notes" fxLayoutGap="10px" fxLayout="column">
+      <span style="font-size:19px">Header</span>
+      <span>Short Description</span>
+      <span style="font-size:11px">Last edit time</span>
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <i class="fas fa-trash-alt"></i>
+        <i class="fas fa-pen"></i>
+      </div>
+    </div>
+  </div>
+
+  <span class="showhide">show more
+    <i class="fas fa-arrow-circle-up"></i>
+  </span>
+  <span class="showhide">show Less
+    <i class="fas fa-arrow-circle-down"></i>
+  </span>
+
+  <div fxLayout="column" fxLayoutGap="25px">
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign.xs="space-between start" fxLayoutAlign="space-between center">
+      <div fxLayout="column">
+        <label>Header</label>
+        <input type="text">
+      </div>
+      <div fxLayout="column">
+        <label>Short Description</label>
+        <input matInput class="inptselect" #message maxlength="25">
+        <mat-hint style="font-size:12px" align="end">Maximum charectors {{message.value.length}} / 25</mat-hint>
+      </div>
+      <div fxLayout="column">
+        <label>Priority Level</label>
+        <mat-select class="inptselect" disableRipple>
+          <mat-option value="high">High</mat-option>
+          <mat-option value="medium">Medium</mat-option>
+          <mat-option value="low">Low</mat-option>
+        </mat-select>
+      </div>
+    </div>
+
+    <div fxLayout="column">
+      <label>Add Notes</label>
+      <textarea class="textData" rows="10" cols="100"></textarea>
+    </div>
+
     <div fxLayout="row" fxLayoutGap="30px" fxLayoutAlign="end">
       <button mat-raised-button color="primary">Add</button>
       <button mat-raised-button> Cancel</button>
     </div>
   </div>
 </mat-card>
+
+
+
+
+
+<!-- 
+
+<table>
+  <tr>
+    <th (click)="sort('name')" >name</th>
+    <th (click)="sort('id')">id</th>
+    <th (click)="sort('date')">dob</th>
+  </tr>
+  <tr *ngFor="let data of json">
+    <td>{{data.name}}</td>
+    <td>{{data.id}}</td>
+    <td>{{data.date}}</td>
+  </tr>
+</table> -->

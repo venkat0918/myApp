@@ -22,6 +22,14 @@ export class AuthServiceService {
     this.user.subscribe((user) => {
       if (user) {
         this.userDetails = user;
+        const userData = {
+          'emailVerified': this.userDetails['emailVerified'],
+          'displayName': this.userDetails['displayName'],
+          'email': this.userDetails['email'],
+          'phoneNumber': this.userDetails['phoneNumber'],
+          'photoURL': this.userDetails['photoURL']
+        }
+        this.loggedData.next(userData)
         console.log(this.userDetails);
       }
       else {
@@ -33,11 +41,23 @@ export class AuthServiceService {
   login() {
     return new Promise((res, rej) => {
       if (this.userDetails) {
-        const user = { 'emailVerified': this.userDetails['emailVerified'], 'metadata': this.userDetails['providerData'][0] }
+        const user = {
+          'emailVerified': this.userDetails['emailVerified'],
+          'displayName': this.userDetails['displayName'],
+          'email': this.userDetails['email'],
+          'phoneNumber': this.userDetails['phoneNumber'],
+          'photoURL': this.userDetails['photoURL']
+        }
         res(user)
       } else {
         this.aAuth.auth.signInWithPopup(new auth.GoogleAuthProvider()).then(response => {
-          const user = { 'emailVerified': res['emailVerified'], 'metadata': res['providerData'][0] }
+          const user ={
+            'emailVerified': response['emailVerified'],
+            'displayName': response['displayName'],
+            'email': response['email'],
+            'phoneNumber': response['phoneNumber'],
+            'photoURL': response['photoURL']
+          }
           localStorage.setItem('isLogin', res['emailVerified'])
           res(user)
         })
@@ -46,6 +66,10 @@ export class AuthServiceService {
   }
 
   logOut() {
-    this.aAuth.auth.signOut();
+  const d =  this.aAuth.auth.signOut().then(res => {
+      console.log('--------logout-----', res)
+      this.loggedData.next(null)
+    });
+    console.log('dhdfhdf', d)
   }
 }

@@ -5,9 +5,9 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ProfileComponent } from './components/profile/profile.component';
-import{MatCardModule} from '@angular/material'
+import{MatCardModule, MatOptionModule, MatSelectModule, MatDialogModule} from '@angular/material'
 import { AppRoutingModule } from './routes/app.routing';
-import{RouterModule} from '@angular/router';
+import{RouterModule, RouteReuseStrategy} from '@angular/router';
 import { SignupComponent } from './components/signup/signup.component';
 import { MyWorkComponent } from './components/my-work/my-work.component'
 import {DragDropModule} from '@angular/cdk/drag-drop';
@@ -24,6 +24,8 @@ import { NotesComponent } from './components/notes/notes.component';
 import { ComponentsComponent } from './components/components.component';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import{HttpClientModule} from '@angular/common/http'
+import { FirebaseComponent } from './components/firebase/firebase.component';
+import { UserinfoComponent } from './components/userinfo/userinfo.component';
 
 
 
@@ -40,6 +42,8 @@ import{HttpClientModule} from '@angular/common/http'
     DashboardComponent,
     NotesComponent,
     ComponentsComponent,
+    FirebaseComponent,
+    UserinfoComponent
   ],
   imports: [
     BrowserModule,
@@ -70,8 +74,12 @@ import{HttpClientModule} from '@angular/common/http'
     MatCheckboxModule,
     FormsModule,ReactiveFormsModule,
     HttpClientModule,
+    MatOptionModule,
+    MatSelectModule,
+    MatDialogModule
   ],
   providers: [],
+  entryComponents: [UserinfoComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

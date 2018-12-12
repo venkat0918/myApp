@@ -26,7 +26,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import{HttpClientModule} from '@angular/common/http'
 import { FirebaseComponent } from './components/firebase/firebase.component';
 import { UserinfoComponent } from './components/userinfo/userinfo.component';
-
+import { AngularFireMessagingModule } from '@angular/fire/messaging';
 
 
 
@@ -76,7 +76,8 @@ import { UserinfoComponent } from './components/userinfo/userinfo.component';
     HttpClientModule,
     MatOptionModule,
     MatSelectModule,
-    MatDialogModule
+    MatDialogModule,
+    AngularFireMessagingModule,
   ],
   providers: [],
   entryComponents: [UserinfoComponent],

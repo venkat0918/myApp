@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FirebaseseService } from './services/firebasese.service';
 
 function particale(){
   x: 100;
@@ -11,8 +12,12 @@ function particale(){
 })
 export class AppComponent {
   title = 'myApp';
-
-
+message
+constructor(public firebaseService: FirebaseseService){
+  this.firebaseService.getPermissions()
+  this.firebaseService.getMessage()
+  this.message = this.firebaseService.currentMessage
+}
 
 
 }

@@ -8,9 +8,12 @@ import { map } from 'rxjs/operators';
 })
 export class FirebaseComponent implements OnInit {
   customers
+  message
   constructor(public fireService: FirebaseseService) { }
 
   ngOnInit() {
+    const userId = 'user001';
+    this.message = this.fireService.currentMessage
   }
 
 

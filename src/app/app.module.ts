@@ -27,6 +27,11 @@ import{HttpClientModule} from '@angular/common/http'
 import { FirebaseComponent } from './components/firebase/firebase.component';
 import { UserinfoComponent } from './components/userinfo/userinfo.component';
 import { AngularFireMessagingModule } from '@angular/fire/messaging';
+// import { Comp1Component } from './lazy-loading-components/comp1/comp1.component';
+// import { Comp2Component } from './lazy-loading-components/comp2/comp2.component';
+// import { Comp3Component } from './lazy-loading-components/comp3/comp3.component';
+// import { RouteComponent } from './lazy-loading-components/route/route.component';
+// import { Comp2Component } from './lazy-loading-components/comp1,lazy-loading-components/comp2/comp2.component';
 
 
 
@@ -43,7 +48,12 @@ import { AngularFireMessagingModule } from '@angular/fire/messaging';
     NotesComponent,
     ComponentsComponent,
     FirebaseComponent,
-    UserinfoComponent
+    UserinfoComponent,
+    // Comp1Component,
+    // Comp2Component,
+    // Comp3Component,
+    // RouteComponent,
+    // Comp2Component
   ],
   imports: [
     BrowserModule,

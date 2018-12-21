@@ -1,0 +1,31 @@
+.progress-container {
+    height: 1em;
+    /* border: 2px solid #FF00FF; */
+    width: 100%;
+    border-radius: 86px;
+    
+  }
+  
+  .progress-container .progress {
+    height: 100%;
+    background-color: #f96320;
+    transition: all 0.6s ease;
+    width: 0px;
+    border-radius: 86px;
+  }
+  
+  .progress-container .progress.finished {
+    background-color: #00FF00;
+    border-radius: 86px;
+  }
+  
+  #load {
+    width: 50%;
+    margin: 1em 25%;
+  }
+  
+  #data {
+    width: 100%;
+    margin: 1em 0;
+    text-align: center;
+  }

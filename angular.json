@@ -22,7 +22,7 @@
               "src/favicon.ico",
               "src/assets",
               "src/manifest.json",
-              "C:/Users/miracle/Desktop/Underdevelopment/myApp/src/firebase.js"
+              "src/firebase-messaging-sw.js"
             ],
             "styles": [
               "src/styles.css"

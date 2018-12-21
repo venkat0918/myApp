@@ -129,3 +129,6 @@ export class Comp1Component implements OnInit {
     progress$.subscribe(displayData)
   }
 }
+
+
+// https://www.learnrxjs.io/operators/error_handling/catch.html

@@ -23,3 +23,14 @@
 /deep/ .ngx-datatable.fixed-row .datatable-scroll .datatable-body-row .datatable-body-cell{
     border-bottom: 1px solid lightgrey !important;
 }
+
+.sidenav{
+    position: absolute;
+    top: 14%;
+    right: 3px;
+    background: #FFFFFF;
+    padding: 10px;
+    width: 314px;
+    height: 618px;
+    box-shadow: 2px 2px 2px 2px lightgrey;
+}
